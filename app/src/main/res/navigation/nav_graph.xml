@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.doxx.tvscredit.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_tracingInfoFragment"
+            app:destination="@id/tracingInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tracingInfoFragment"
+        android:name="com.doxx.tvscredit.fragments.TracingInfoFragment"
+        android:label="fragment_tracing_info"
+        tools:layout="@layout/fragment_tracing_info" >
+        <action
+            android:id="@+id/action_tracingInfoFragment_to_traceVehicleFragment"
+            app:destination="@id/traceVehicleFragment" />
+        <action
+            android:id="@+id/action_tracingInfoFragment_to_traceOwnerFragment"
+            app:destination="@id/traceOwnerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/traceVehicleFragment"
+        android:name="com.doxx.tvscredit.fragments.TraceVehicleFragment"
+        android:label="fragment_trace_vehicle"
+        tools:layout="@layout/fragment_trace_vehicle" />
+    <fragment
+        android:id="@+id/traceOwnerFragment"
+        android:name="com.doxx.tvscredit.fragments.TraceOwnerFragment"
+        android:label="fragment_trace_owner"
+        tools:layout="@layout/fragment_trace_owner" >
+        <action
+            android:id="@+id/action_traceOwnerFragment_to_mobileNumbersFragment"
+            app:destination="@id/mobileNumbersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mobileNumbersFragment"
+        android:name="com.doxx.tvscredit.fragments.MobileNumbersFragment"
+        android:label="fragment_mobile_numbers"
+        tools:layout="@layout/fragment_mobile_numbers" >
+        <action
+            android:id="@+id/action_mobileNumbersFragment_to_resultsActivity2"
+            app:destination="@id/resultsActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/resultsActivity2"
+        android:name="com.doxx.tvscredit.ResultsActivity"
+        android:label="activity_results"
+        tools:layout="@layout/activity_results" />
+</navigation>

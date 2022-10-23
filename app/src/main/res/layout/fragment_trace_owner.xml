@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".fragments.TraceOwnerFragment">
+    <ImageView
+        android:layout_marginTop="15dp"
+        android:id="@+id/logo_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:src="@drawable/tvslogo"/>
+    <ImageView
+        android:id="@+id/map_iv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/map"
+        app:layout_constraintTop_toBottomOf="@id/logo_iv"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/man_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/man"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:textColor="@color/white"
+        android:layout_marginTop="100dp"
+        android:id="@+id/trace_using_mNumber"
+        app:layout_constraintTop_toBottomOf="@id/map_iv"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/blue"
+        app:cornerRadius="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_height="wrap_content"
+        android:text="@string/trace_using_mobile_number"
+        android:textAllCaps="false"
+        android:fontFamily="@font/product_sans"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/trace_using_transaction"
+        app:layout_constraintTop_toBottomOf="@id/trace_using_mNumber"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        app:cornerRadius="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_height="wrap_content"
+        android:text="@string/trace_using_banking_transactions"
+        android:textAllCaps="false"
+        android:fontFamily="@font/product_sans"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

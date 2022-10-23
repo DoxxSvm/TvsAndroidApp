@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/mobile_number_rb"
+    android:padding="12dp"
+    android:textSize="15sp"
+    android:fontFamily="@font/product_sans"
+    android:textColor="@color/black"
+    android:layout_marginStart="20dp"
+    android:text="adfadfsa"
+    android:layout_height="wrap_content">
+
+</RadioButton>
