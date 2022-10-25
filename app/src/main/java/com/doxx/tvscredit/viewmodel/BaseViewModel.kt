@@ -11,10 +11,24 @@ import javax.inject.Inject
 @HiltViewModel
 class BaseViewModel @Inject constructor(private val repository: BaseRepository) :ViewModel() {
     val employeeResponseLD get() = repository.employeeResponseLD
+    val getLatLongResponseLD get() = repository.latlongResponseLD
+    val getMobileNoLD get() = repository.mobileNoResponseLD
 
     fun signIn(employeeRequest: EmployeeRequest){
         viewModelScope.launch {
             repository.signIn(employeeRequest)
+        }
+    }
+
+    fun getLatLong(){
+        viewModelScope.launch {
+            repository.getLatLong()
+        }
+    }
+
+    fun getMobileNo(){
+        viewModelScope.launch {
+            repository.getMobileNo()
         }
     }
 

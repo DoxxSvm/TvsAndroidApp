@@ -26,6 +26,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     lateinit var tokenManager: TokenManager
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if(tokenManager.getToken() != null){
+            findNavController().navigate(R.id.action_loginFragment_to_tracingInfoFragment)
+        }
         proceed.setOnClickListener {
             val employeeID = employeeID_et.text.toString()
             val password = password_et.text.toString()
@@ -38,6 +41,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 is NetworkResult.Success ->{
                     findNavController().navigate(R.id.action_loginFragment_to_tracingInfoFragment)
                     tokenManager.saveToken(it.data!!.token)
+
                 }
                 is NetworkResult.Error -> {
                     Snackbar.make(view,it.message.toString(),Snackbar.LENGTH_SHORT).show()

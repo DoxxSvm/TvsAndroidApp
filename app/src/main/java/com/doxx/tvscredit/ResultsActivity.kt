@@ -17,9 +17,12 @@ class ResultsActivity : AppCompatActivity(),OnMapReadyCallback {
         setContentView(R.layout.activity_results)
         supportActionBar?.hide()
         window.statusBarColor=Color.BLACK
+
+
         val mapFragment =supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
 
         view_on_gMap.setOnClickListener {
             val geoUri =
@@ -30,12 +33,12 @@ class ResultsActivity : AppCompatActivity(),OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        val sydney = LatLng(27.1751, 78.04)
+        val sydney = LatLng(27.1751, 78.040001)
         val markerOptions = MarkerOptions().position(sydney).title("Taj mahal").snippet(
             "Best monuments"
         )
         googleMap.addMarker(markerOptions)
-        val sydney2 = LatLng(26.1751, 77.04)
+        val sydney2 = LatLng(26.1751, 77.040001)
         val markerOptions2 = MarkerOptions().position(sydney2).title("Taj mahal").snippet(
             "Best monuments"
         )
