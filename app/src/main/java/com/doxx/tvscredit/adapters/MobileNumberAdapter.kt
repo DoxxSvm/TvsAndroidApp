@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.doxx.tvscredit.R
 import kotlinx.android.synthetic.main.item.view.*
 
-class MobileNumberAdapter(private val onClick: (String) -> Unit, var list:ArrayList<String>):RecyclerView.Adapter<MobileNumberAdapter.ViewHolder>() {
+class MobileNumberAdapter(private val onClick: (String,Int) -> Unit, private var list:ArrayList<String>):RecyclerView.Adapter<MobileNumberAdapter.ViewHolder>() {
 
     var selectedPosition = -1
     class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
@@ -29,7 +29,7 @@ class MobileNumberAdapter(private val onClick: (String) -> Unit, var list:ArrayL
             mobile_number_rb.setOnCheckedChangeListener { compoundButton, b ->
                 if(b){
                     selectedPosition=holder.adapterPosition
-                    onClick(holder.itemView.mobile_number_rb.text.toString())
+                    onClick(holder.itemView.mobile_number_rb.text.toString(),position)
                 }
             }
         }

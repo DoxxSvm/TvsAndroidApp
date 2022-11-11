@@ -12,7 +12,13 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_tracingInfoFragment"
-            app:destination="@id/tracingInfoFragment" />
+            app:destination="@id/tracingInfoFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/tracingInfoFragment"
@@ -21,16 +27,31 @@
         tools:layout="@layout/fragment_tracing_info" >
         <action
             android:id="@+id/action_tracingInfoFragment_to_traceVehicleFragment"
-            app:destination="@id/traceVehicleFragment" />
+            app:destination="@id/traceVehicleFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"/>
         <action
             android:id="@+id/action_tracingInfoFragment_to_traceOwnerFragment"
-            app:destination="@id/traceOwnerFragment" />
+            app:destination="@id/traceOwnerFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/traceVehicleFragment"
         android:name="com.doxx.tvscredit.fragments.TraceVehicleFragment"
         android:label="fragment_trace_vehicle"
-        tools:layout="@layout/fragment_trace_vehicle" />
+        tools:layout="@layout/fragment_trace_vehicle" >
+        <argument
+            android:name="tracingInfo"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_traceVehicleFragment_to_resultFragment2"
+            app:destination="@id/resultFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/traceOwnerFragment"
         android:name="com.doxx.tvscredit.fragments.TraceOwnerFragment"
@@ -38,7 +59,22 @@
         tools:layout="@layout/fragment_trace_owner" >
         <action
             android:id="@+id/action_traceOwnerFragment_to_mobileNumbersFragment"
-            app:destination="@id/mobileNumbersFragment" />
+            app:destination="@id/mobileNumbersFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"/>
+        <argument
+            android:name="tracingInfo"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_traceOwnerFragment_to_resultFragment2"
+            app:destination="@id/resultFragment2"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"/>
+
     </fragment>
     <fragment
         android:id="@+id/mobileNumbersFragment"
@@ -46,12 +82,38 @@
         android:label="fragment_mobile_numbers"
         tools:layout="@layout/fragment_mobile_numbers" >
         <action
-            android:id="@+id/action_mobileNumbersFragment_to_resultsActivity2"
-            app:destination="@id/resultsActivity2" />
+            android:id="@+id/action_mobileNumbersFragment_to_errorFragment"
+            app:destination="@id/errorFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"/>
+        <action
+            android:id="@+id/action_mobileNumbersFragment_to_resultFragment2"
+            app:destination="@id/resultFragment2"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"/>
     </fragment>
-    <activity
-        android:id="@+id/resultsActivity2"
-        android:name="com.doxx.tvscredit.ResultsActivity"
-        android:label="activity_results"
-        tools:layout="@layout/activity_results" />
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="com.doxx.tvscredit.fragments.ErrorFragment"
+        android:label="fragment_error"
+        tools:layout="@layout/fragment_error" >
+        <action
+            android:id="@+id/action_errorFragment_to_traceOwnerFragment"
+            app:destination="@id/traceOwnerFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"
+            app:popUpTo="@id/traceOwnerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment2"
+        android:name="com.doxx.tvscredit.fragments.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>

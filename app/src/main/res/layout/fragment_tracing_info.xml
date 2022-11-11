@@ -131,6 +131,7 @@
                 android:id="@+id/trace_owner_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="@string/trace_owner"
                 android:textSize="17sp"
                 android:textStyle="bold"/>
@@ -153,6 +154,7 @@
                     android:id="@+id/trace_owner_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:textColor="@color/dark_grey"
                     android:fontFamily="@font/product_sans"
                     />

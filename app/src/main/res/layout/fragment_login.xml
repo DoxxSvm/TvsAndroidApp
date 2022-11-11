@@ -73,6 +73,7 @@
         android:layout_marginTop="20dp"
         android:textColorHint="@color/dark_grey"
         app:hintTextColor="@color/dark_grey"
+        app:endIconMode="password_toggle"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -82,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_grey"
+            android:inputType="textPassword"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
